@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Schwarze Gilde Shop</title>
+  <style>
+    body {
+      background: #0e0e0e;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 0 20px #00ff99;
+    }
+    input, select, button {
+      width: 100%;
+      margin: 0.75rem 0;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    button {
+      background: #00ff99;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #00cc7a;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🛒 Artikelbestellung</h1>
+    <form id="orderForm">
+      <label for="quantity">Stückzahl:</label>
+      <select id="quantity" required></select>
+
+      <label for="color">Farbvariante:</label>
+      <select id="color" required>
+        <option value="DARK">🖤 DARK</option>
+        <option value="BLUE">🔵 BLUE</option>
+        <option value="PURPLE">🟣 PURPLE</option>
+      </select>
+
+      <label for="name">Vollständiger Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="email">E-Mail-Adresse:</label>
+      <input type="email" id="email" required>
+
+      <label for="phone">Telefonnummer:</label>
+      <input type="tel" id="phone" required>
+
+      <label for="street">Straße:</label>
+      <input type="text" id="street" required>
+
+      <label for="houseNumber">Hausnummer:</label>
+      <input type="text" id="houseNumber" required>
+
+      <label for="zip">PLZ:</label>
+      <input type="text" id="zip" required>
+
+      <label for="city">Ort:</label>
+      <input type="text" id="city" required>
+
+      <button type="submit">Bestellung absenden</button>
+    </form>
+    <p id="status"></p>
+  </div>
+
+  <script>
+    const quantitySelect = document.getElementById("quantity");
+    for(let i = 100; i <= 2500; i += 100) {
+      const option = document.createElement("option");
+      option.value = i;
+      option.textContent = i + " Stück";
+      quantitySelect.appendChild(option);
+    }
+
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const quantity = document.getElementById("quantity").value;
+      const color = document.getElementById("color").value;
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const street = document.getElementById("street").value;
+      const houseNumber = document.getElementById("houseNumber").value;
+      const zip = document.getElementById("zip").value;
+      const city = document.getElementById("city").value;
+
+      const subject = `Neue Bestellung: ${quantity} Stück (${color})`;
+      const body =
+        `Name: ${name}%0D%0A` +
+        `E-Mail: ${email}%0D%0A` +
+        `Telefon: ${phone}%0D%0A` +
+        `Adresse: ${street} ${houseNumber}, ${zip} ${city}%0D%0A` +
+        `Bestellmenge: ${quantity}%0D%0A` +
+        `Farbvariante: ${color}`;
+
+      const mailto = `mailto:SchwarzeGilde+Shop@proton.me?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailto;
+
+      document.getElementById("status").textContent = "Bestellung wird vorbereitet...";
+    });
+  </script>
+</body>
+</html>
