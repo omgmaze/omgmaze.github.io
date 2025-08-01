@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Schwarze Gilde</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <style>
+      body {
+        background-color: #0d0b10;
+        color: #e8e8e3;
+      }
+      nav, footer {
+        background-color: #1a1822;
+      }
+      h2, h3 {
+        color: #c9a7f0;
+      }
+      a {
+        color: #ffffff;
+      }
+      figure img {
+        border-radius: 8px;
+        box-shadow: 0 0 10px #5e4b8b;
+      }
+      input, button {
+        background-color: #2d293a;
+        color: #f2f2f2;
+        border-color: #4e4e4e;
+      }
+      input::placeholder {
+        color: #aaa;
+      }
+      button {
+        background-color: #7f4bd9;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="container-fluid">
+      <ul>
+        <li><strong>Schwarze Gilde</strong></li>
+      </ul>
+      <ul>
+        <li><a href="#">Start</a></li>
+        <li><a href="#">Bereiche</a></li>
+        <li><a href="#" role="button">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <div class="grid">
+        <section>
+          <hgroup>
+            <h2>Willkommen bei der Schwarzen Gilde</h2>
+            <h3>Vernetzt. Kreativ. Anders.</h3>
+          </hgroup>
+          <p>Die Schwarze Gilde ist ein Kollektiv kreativer Marken unter einem dunklen Banner – mit Stil, Haltung und Vision. Von Musik über Film bis Körperkunst schaffen wir Räume für das Ungewöhnliche.</p>
+          
+          <figure>
+            <img src="https://images.unsplash.com/photo-1620912189860-ec946aa8ab42?auto=format&fit=crop&w=1200&q=80" alt="Mystisches Emblem" />
+            <figcaption><a href="https://unsplash.com/photos/eKP5wE-Wcqw" target="_blank">Bildquelle: Unsplash</a></figcaption>
+          </figure>
+
+          <h3>SGtattoo</h3>
+          <p>Körperkunst, die Geschichten erzählt. Unser Tattoo-Studio vereint Ästhetik, Symbolik und Individualität in einem einzigartigen Erlebnis. Dunkel. Fein. Zeitlos.</p>
+          
+          <figure>
+            <img src="https://images.unsplash.com/photo-1601918774946-25813c0f38d4?auto=format&fit=crop&w=1200&q=80" alt="Tattoo Studio" />
+            <figcaption><a href="https://unsplash.com/photos/GXMr7BadXQo" target="_blank">Bildquelle: Unsplash</a></figcaption>
+          </figure>
+
+          <h3>SGpicture & Records</h3>
+          <p>Ob Film oder Klang – wir fangen das ein, was sonst verborgen bleibt. Mit einem Auge für Schatten, Struktur und Atmosphäre produzieren wir Visionen.</p>
+
+          <figure>
+            <img src="https://images.unsplash.com/photo-1587202372775-b59a53a9db06?auto=format&fit=crop&w=1200&q=80" alt="Studio Atmosphäre" />
+            <figcaption><a href="https://unsplash.com/photos/nyL-rzwP-Mk" target="_blank">Bildquelle: Unsplash</a></figcaption>
+          </figure>
+
+        </section>
+      </div>
+    </main>
+
+    <section aria-label="Subscribe example">
+      <div class="container">
+        <article>
+          <hgroup>
+            <h2>Bleibe verbunden</h2>
+            <h3>Erfahre als Erste*r, wenn ein neuer Bereich der Gilde erwacht.</h3>
+          </hgroup>
+          <form class="grid">
+            <input type="text" id="firstname" name="firstname" placeholder="Dein Name" aria-label="Vorname" required />
+            <input type="email" id="email" name="email" placeholder="E-Mail-Adresse" aria-label="E-Mail" required />
+            <button type="submit" onclick="event.preventDefault()">Abonnieren</button>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <footer class="container">
+      <small>
+        <a href="#">Impressum</a> • <a href="#">Datenschutz</a>
+      </small>
+    </footer>
+  </body>
+</html>
